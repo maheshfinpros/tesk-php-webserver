@@ -1,11 +1,25 @@
 pipeline {
     agent any
+
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                checkout scm
+                // Clean workspace
+                deleteDir()
+
+                // Checkout code from Git
+                git url: 'https://github.com/maheshfinpros/tesk-php-webserver.git'
             }
         }
-        // Add more stages as needed
+
+        stage('Deploy Files') {
+            agent {
+                label '13.201.192.130'
+            }
+            steps {
+                // Deploy PHP and HTML files to web server
+                sh "ssh ubuntu@13.201.192.130 sudo cp -r /var/lib/jenkins/workspace/php=mahesh/* /var/www/html"
+            }
+        }
     }
 }
