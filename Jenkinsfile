@@ -8,6 +8,8 @@ pipeline {
             steps {
                 sshagent(credentials: ['new-ssh-ubuntu']) { 
                     sh 'rsync -avz -e ssh /var/lib/jenkins/workspace/php=mahesh/ ubuntu@13.201.192.130:/var/www/html/'
+                    sh 'scp /var/lib/jenkins/workspace/php=mahesh/index.php ubuntu@13.201.192.130:/var/www/html/'
+                    sh 'scp /var/lib/jenkins/workspace/php=mahesh/index.html ubuntu@13.201.192.130:/var/www/html/'
                 }
             }
         }
