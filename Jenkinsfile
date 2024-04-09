@@ -8,7 +8,7 @@ pipeline {
                 deleteDir()
 
                 // Checkout code from Git
-                git url: 'https://github.com/maheshfinpros/tesk-php-webserver.git'
+                git url: 'https://github.com/maheshfinpros/tesk-php-webserver.git', branch: 'main'
             }
         }
 
