@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Deploy code using rsync to the same server for index.html
-                    sh 'rsync -avz /var/lib/jenkins/workspace/php=mahesh/index.html/ /var/www/html/'
+                    sh 'rsync -avz /var/lib/jenkins/workspace/php=mahesh/index.html /var/www/html/'
 
                     // Deploy code using rsync to the same server for index.php
                     sh 'rsync -avz /var/lib/jenkins/workspace/php=mahesh/index.php /var/www/html/'
