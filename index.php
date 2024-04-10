@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to chandra  babu 123 naidu Blog</h1>
+        <h1>Welcome to chandra  Blog</h1>
     </header>
     <nav>
         <ul>
